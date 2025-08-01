@@ -1,5 +1,6 @@
 package com.medical.users;
 
+import com.medical.profils.ProfilEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -50,6 +51,9 @@ public class UserEntity implements UserDetails {
     @Column(name = "updated_at")
     private Date updatedAt;
 
+    @ManyToOne
+    @JoinColumn(name = "profil_id")
+    private ProfilEntity profil;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

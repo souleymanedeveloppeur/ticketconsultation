@@ -3,11 +3,14 @@ package com.medical.ticket;
 import com.medical.constantes.TicketConstant;
 import com.medical.dtos.TicketDto;
 import com.medical.dtos.TicketResponseDto;
+import com.medical.users.UserEntity;
 import com.medical.utils.TicketNumberGenerator;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,12 +26,17 @@ public class TicketServiceImpl implements TicketService{
         return repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Ticket non trouvé avec l'ID : " + id));
     }
+    private UserEntity getUserConnect(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return (UserEntity) authentication.getPrincipal();
+    }
 
     @Override
     public TicketResponseDto createTicket(TicketDto ticketDto) {
         TicketEntity entity=mapper.toEntity(ticketDto);
         entity.setNumero(TicketNumberGenerator.generateTicketNumber());
         entity.setStatus(TicketConstant.SOUMISE);
+        entity.setIdUser(getUserConnect().getId());
         return mapper.toDto(repository.save(entity));
     }
 
