@@ -32,3 +32,13 @@
 
   server:
     port: 8081
+
+  logging:
+    level:
+      org:
+        springdoc: DEBUG
+        springframework:
+          web: DEBUG
+        hibernate: ERROR
+
+

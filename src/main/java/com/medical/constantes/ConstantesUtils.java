@@ -37,5 +37,14 @@ public class ConstantesUtils {
             default -> "Type inconnu";
         };
     }
+
+    public static String getPrioriteLabel(int code) {
+        return switch (code) {
+            case TicketConstant.NORMALE -> "Normale";
+            case TicketConstant.URGENT -> "Urgent";
+            case TicketConstant.CRITIQUE -> "Critique";
+            default -> "Type inconnu";
+        };
+    }
 }
 
