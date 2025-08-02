@@ -42,6 +42,9 @@ public class UserEntity implements UserDetails {
 
     @Column(columnDefinition = "boolean default true")
     private boolean actif;
+    
+    @Column(name = "clinique")
+    private Long idClinique;
 
     @CreationTimestamp
     @Column(updatable = false, name = "created_at")

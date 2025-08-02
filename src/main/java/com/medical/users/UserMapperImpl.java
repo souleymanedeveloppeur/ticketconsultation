@@ -14,6 +14,7 @@ public class UserMapperImpl implements UserMapper {
                 .firstName(dto.getFirstName())
                 .lastName(dto.getLastName())
                 .email(dto.getEmail())
+                .idClinique(dto.getIdClinique())
                 .build();
     }
 
@@ -26,6 +27,7 @@ public class UserMapperImpl implements UserMapper {
                 .email(entity.getEmail())
                 .telephone(entity.getTelephone())
                 .actif(entity.isActif())
+                .idClinique(entity.getIdClinique())
                 .build();
     }
 

@@ -30,8 +30,7 @@ public class ProfilServiceImpl implements ProfilService{
         if(dto.getActionIds() == null || dto.getActionIds().isEmpty())
             throw new Exception("Au moins une action est obligatoire");
         ProfilEntity model = repository.findByLibelle(dto.getLibelle());
-        if ((dto.getId() == null && model != null)
-                || (model != null && dto.getId() != null && !model.getId().equals(dto.getId())))
+        if (dto.getId() == null && model != null || model != null && !model.getId().equals(dto.getId()))
             throw new Exception("Ce libellé est déjà utilisé");
     }
 

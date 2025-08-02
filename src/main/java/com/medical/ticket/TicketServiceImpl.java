@@ -37,6 +37,7 @@ public class TicketServiceImpl implements TicketService{
         entity.setNumero(TicketNumberGenerator.generateTicketNumber());
         entity.setStatus(TicketConstant.SOUMISE);
         entity.setIdUser(getUserConnect().getId());
+        entity.setIdClinique(getUserConnect().getIdClinique());
         return mapper.toDto(repository.save(entity));
     }
 

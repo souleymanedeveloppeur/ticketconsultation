@@ -36,6 +36,9 @@ public class TicketEntity {
 
     private Long idUser;
 
+    @Column(name = "clinique")
+    private Long idClinique;
+
     @PrePersist
     protected void onCreate() {
         dateGeneration = LocalDateTime.now();

@@ -15,5 +15,6 @@ public class UserDto {
     private String email;
     private String telephone;
     private boolean actif;
+    private Long idClinique;
 
 }
