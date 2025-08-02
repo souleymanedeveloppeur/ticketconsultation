@@ -18,4 +18,5 @@ public class TicketDto {
     private int category;
     private int sexe;
     private int typeConsultation;
+    private int priorite;
 }

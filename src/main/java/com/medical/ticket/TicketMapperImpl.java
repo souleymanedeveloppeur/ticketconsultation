@@ -18,6 +18,7 @@ public class TicketMapperImpl implements TicketMapper {
         .category(dto.getCategory())
         .sexe(dto.getSexe())
         .typeConsultation(dto.getTypeConsultation())
+        .priorite(dto.getPriorite())
         .build();
     }
 
@@ -33,6 +34,7 @@ public class TicketMapperImpl implements TicketMapper {
         .typeConsultation(ConstantesUtils.getTypeConsultationLabel(entity.getTypeConsultation()))
         .status(ConstantesUtils.getStatutTicketLabel(entity.getStatus()))
         .dateGeneration(entity.getDateGeneration())
+        .priorite(ConstantesUtils.getPrioriteLabel(entity.getPriorite()))
         .build();
     }
 

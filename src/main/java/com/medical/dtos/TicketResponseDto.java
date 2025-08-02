@@ -16,4 +16,5 @@ public class TicketResponseDto {
     private String category;
     private String sexe;
     private String typeConsultation;
+    private String priorite;
 }

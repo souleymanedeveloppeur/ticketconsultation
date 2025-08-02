@@ -25,4 +25,9 @@ public final class TicketConstant {
     public static final int SAGE_FEMME = 1;
     public static final int MEDECIN = 2;
     public static final int DENTIST = 3;
+
+    // Constantes liées AU Priorite
+    public static final int NORMALE = 1;
+    public static final int URGENT = 2;
+    public static final int CRITIQUE = 3;
 }

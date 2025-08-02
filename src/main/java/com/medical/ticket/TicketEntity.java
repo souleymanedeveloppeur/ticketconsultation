@@ -31,6 +31,9 @@ public class TicketEntity {
     private int sexe;
     @Column(columnDefinition = "int default 0")
     private int typeConsultation;
+    @Column(columnDefinition = "int default 0")
+    private int priorite;
+
     private Long idUser;
 
     @PrePersist
