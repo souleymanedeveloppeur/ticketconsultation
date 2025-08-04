@@ -65,9 +65,20 @@ public class TicketController {
         return ResponseEntity.ok(ticketService.getTicketsByAgentId(agentId));
     }
 
+
     // Compter les tickets par statut
     @GetMapping("/count/status/{status}")
     public ResponseEntity<Long> countTicketsByStatus(@PathVariable int status) {
         return ResponseEntity.ok(ticketService.countTicketsByStatus(status));
+    }
+
+    @GetMapping("/by-clinique/{cliniqueId}")
+    public ResponseEntity<List<TicketResponseDto>> getTicketsByCliniqueId(@PathVariable Long cliniqueId) {
+        return ResponseEntity.ok(ticketService.getTicketsByCliniqueId(cliniqueId));
+    }
+
+    @GetMapping("/clinique/{id}/today")
+    public ResponseEntity<List<TicketResponseDto>> getTicketsByCliniqueIdForToday(@PathVariable Long id) {
+        return ResponseEntity.ok(ticketService.getAllTicketsByCliniqueIdForToday(id));
     }
 }

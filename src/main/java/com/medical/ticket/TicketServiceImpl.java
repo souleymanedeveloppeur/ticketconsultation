@@ -88,4 +88,14 @@ public class TicketServiceImpl implements TicketService{
     public long countTicketsByStatus(int status) {
         return 0;
     }
+
+    @Override
+    public List<TicketResponseDto> getTicketsByCliniqueId(Long cliniqueId) {
+        return mapper.toDto(repository.findAllByIdClinique(cliniqueId));
+    }
+
+    @Override
+    public List<TicketResponseDto> getAllTicketsByCliniqueIdForToday(Long cliniqueId) {
+        return mapper.toDto(repository.findAllByIdCliniqueAndToday(cliniqueId));
+    }
 }

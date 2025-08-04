@@ -32,6 +32,9 @@ public interface TicketService {
     // Compter les tickets par statut
     long countTicketsByStatus(int status);
 
+    List<TicketResponseDto> getTicketsByCliniqueId(Long cliniqueId);
+
+    List<TicketResponseDto> getAllTicketsByCliniqueIdForToday(Long cliniqueId);
     // Vérifier l’existence d’un ticket
    // boolean existsById(Long id);
 }
